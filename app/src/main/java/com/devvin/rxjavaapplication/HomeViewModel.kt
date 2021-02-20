@@ -5,6 +5,11 @@ import androidx.lifecycle.ViewModel
 class HomeViewModel : ViewModel() {
     private val repository = HomeRepository()
     fun getDogList() {
-        repository.testRxJava()
+        repository.testRxJavaWithDisposableObserver()
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        repository.dispose()
     }
 }
