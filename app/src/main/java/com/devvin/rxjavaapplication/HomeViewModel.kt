@@ -4,8 +4,11 @@ import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
     private val repository = HomeRepository()
+    private val rxJavaConcepts = RxJavaConcepts()
+
     fun getDogList() {
-        repository.testRxJavaWithDisposableObserver()
+//        rxJavaConcepts.testRxJavaWithDisposableObserver()
+        repository.getDogList()
     }
 
     override fun onCleared() {
